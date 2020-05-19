@@ -1,0 +1,16 @@
+ul {
+    list-style-type: none;
+}
+
+.btn-margin-left {
+    margin-left: 2px;
+}
+.btn-margin-right {
+    margin-right: 2px;
+}
+
+.navbar-header{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+

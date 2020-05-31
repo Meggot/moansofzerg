@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SoundEntity } from '../models/SoundEntity';
+import { SoundEntity } from './SoundEntity';
 import { zergUnits, zergBuildings } from '../zerg-models';
 
 @Injectable({
@@ -14,6 +14,8 @@ export class GameState {
     score: number = 0;
 
     wrongAnswers: number = 0;
+
+    outputMessage: string;
 
     length: number = 0;
 

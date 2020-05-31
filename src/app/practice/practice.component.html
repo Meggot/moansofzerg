@@ -1,4 +1,6 @@
 <div *ngIf='outputMessage !== ""' class="alert alert-success"><h1><small> {{ outputMessage }}</small></h1>
 </div> 
-  <app-zerg-unit-tile (unitClicked)="unitClicked($event)"></app-zerg-unit-tile>
-  <app-zerg-building-tile (buildingClicked)="buildingClicked($event)"></app-zerg-building-tile>
+<h4>Units</h4>
+  <app-tile-component [selections]='units' (clickedTile)="playSound($event)"></app-tile-component>
+<h4>Buildings</h4>
+  <app-tile-component [selections]='buildings' (clickedTile)="playSound($event)"></app-tile-component>

@@ -1,34 +1,39 @@
-<div class="row">
-  <div class="col-md-12 float-center">
+<div class="col-md-12 float-center">
+  <div class="row">
     <div *ngIf='!isPlaying'>
       <h4>Click the icon of the building or unit that makes the sound. Press start when you are ready. Good luck!</h4>
       <div class="col-md-12 btn btn-success" (click)="startGame()"> Start </div>
     </div>
-    <div *ngIf='isPlaying' class="col-md-10">
-      <div class="col-md-3 alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" 
-      *ngIf='!finished'>
-        <h4>{{ gameState.score }} / {{ gameState.length}} Correct</h4>
-        <div *ngIf='gameState.wrongAnswers >0' style='text-emphasis-color: red'>
-          <h4>{{ gameState.wrongAnswers }} Wrong </h4>
-        </div>
-        <p> {{ outputMessage }} </p>
-      </div>
-
-      <div class="col-md-8"  *ngIf='finished'>
-         Game Over. Final Score: {{ gameState.score }} / {{gameState.length }} with {{ gameState.wrongAnswers }} wrong answers.
-      </div>
-      
-      <div class="col-md-6" *ngIf='!finished'>
-        <div class="btn btn-warning" (click)="playNoise()">Replay Noise</div>
-      </div>
+  </div>
+  <div *ngIf='finished'>
+    <app-scorescreen [gameState]='gameState'></app-scorescreen>
   </div>
 
-  <div class="row" *ngIf='isPlaying  && !finished'>
-    <div class="col-md-12">
-      <div class="container">
-          <app-zerg-unit-tile (unitClicked)="answer($event)"></app-zerg-unit-tile>
-          <app-zerg-building-tile (buildingClicked)="answer($event)"></app-zerg-building-tile>
+  <div class="row" *ngIf='isPlaying'>
+    <div *ngIf='isPlaying'>
+      <div class="col-md-8">
+        <div class="alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" *ngIf='!finished'>
+          <h4>{{ gameState.score }} / {{ gameState.length}} Correct. {{ gameState.wrongAnswers }} Wrong </h4>
+          <div class="col-md-10">
+            <div class="panel panel-success">
+              <strong>{{gameState.outputMessage}}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
+          Replay Noise
+        </div>
+      </div>
+      <div class="ml-5 ml-lg-0"></div>
+      <div class="col-md-8">
+        <div class="col-md-12 alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
+          <h4>Units</h4>
+          <app-tile-component [selections]='units' (clickedTile)="answer($event)"></app-tile-component>
+          <h4>Buildings</h4>
+          <app-tile-component [selections]='buildings' (clickedTile)="answer($event)"></app-tile-component>
+        </div>
       </div>
     </div>
+    <div class="col-md-2"></div>
   </div>
-</div>
+  </div>

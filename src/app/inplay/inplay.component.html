@@ -1,39 +1,29 @@
 <div class="col-md-12 float-center">
-  <div class="row">
-    <div *ngIf='!isPlaying'>
-      <h4>Click the icon of the building or unit that makes the sound. Press start when you are ready. Good luck!</h4>
-      <div class="col-md-12 btn btn-success" (click)="startGame()"> Start </div>
-    </div>
-  </div>
-  <div *ngIf='finished'>
+  <div class="row" *ngIf='finished'>
     <app-scorescreen [gameState]='gameState'></app-scorescreen>
   </div>
 
-  <div class="row" *ngIf='isPlaying'>
-    <div *ngIf='isPlaying'>
-      <div class="col-md-8">
-        <div class="alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" *ngIf='!finished'>
-          <h4>{{ gameState.score }} / {{ gameState.length}} Correct. {{ gameState.wrongAnswers }} Wrong </h4>
-          <div class="col-md-10">
-            <div class="panel panel-success">
-              <strong>{{gameState.outputMessage}}</strong>
-            </div>
-          </div>
-        </div>
-        <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
-          Replay Noise
-        </div>
-      </div>
-      <div class="ml-5 ml-lg-0"></div>
-      <div class="col-md-8">
-        <div class="col-md-12 alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
-          <h4>Units</h4>
-          <app-tile-component [selections]='units' (clickedTile)="answer($event)"></app-tile-component>
-          <h4>Buildings</h4>
-          <app-tile-component [selections]='buildings' (clickedTile)="answer($event)"></app-tile-component>
+  <div class="col-md-8">
+    <div class="alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" *ngIf='!finished'>
+      <h4>{{ gameState.score }} / {{ gameState.length}} Correct. {{ gameState.wrongAnswers }} Wrong </h4>
+      <div class="col-md-10">
+        <div class="panel panel-success">
+          <strong>{{gameState.outputMessage}}</strong>
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
+    <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
+      Replay Sound
+    </div>
   </div>
+  <div class="ml-5 ml-lg-0"></div>
+  <div class="col-md-8">
+    <div class="col-md-12 alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
+      <h4>Units</h4>
+      <app-tile-component [selections]='units' (clickedTile)="answer($event)"></app-tile-component>
+      <h4>Buildings</h4>
+      <app-tile-component [selections]='buildings' (clickedTile)="answer($event)"></app-tile-component>
+    </div>
   </div>
+</div>
+<div class="col-md-2"></div>

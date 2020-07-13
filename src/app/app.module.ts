@@ -8,6 +8,8 @@ import { AppRoutingModule } from './routing/routing.module';
 import { HomeComponent } from './home/home.component';
 import { ScorescreenComponent } from './inplay/scorescreen/scorescreen.component';
 import { TileComponent } from './shared/components/tile/tile.component';
+import { MenuComponent } from './challenge/menu/menu.component';
+import { ChallengeComponent } from './challenge/challenge/challenge.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { TileComponent } from './shared/components/tile/tile.component';
     PracticeComponent,
     TileComponent,
     HomeComponent,
-    ScorescreenComponent
+    ScorescreenComponent,
+    MenuComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

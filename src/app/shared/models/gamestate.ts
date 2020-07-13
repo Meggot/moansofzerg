@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { SoundEntity } from './SoundEntity';
 import { zergUnits, zergBuildings } from '../zerg-models';
+import { Selection } from './Selection';
 
 @Injectable({
     providedIn: 'root',
   })
 export class GameState {
 
-    soundEntities: SoundEntity[] = []
+    soundEntities: Selection[] = []
 
-    activeSoundEntities: SoundEntity;
+    activeSoundEntities: Selection;
 
     score: number = 0;
 
@@ -19,16 +20,11 @@ export class GameState {
 
     length: number = 0;
 
-    constructor(includeZergBuildings: boolean, includeZergUnits: boolean) {
-        if (includeZergBuildings == true) {
-            this.soundEntities = this.soundEntities.concat(zergBuildings)
-        }
-        if (includeZergUnits == true) {
-            this.soundEntities = this.soundEntities.concat(zergUnits)
-        }
-        this.shuffleArray(this.soundEntities)
-        this.length = this.soundEntities.length;
-        this.activeSoundEntities = this.soundEntities.pop();
+    constructor(soundEntities: Selection[]) {
+        this.shuffleArray(soundEntities)
+        this.length = soundEntities.length;
+        this.soundEntities = soundEntities
+        this.activeSoundEntities = soundEntities.pop();
     }
 
     getActiveSoundEntity(){
@@ -37,7 +33,7 @@ export class GameState {
     }
 
     submitAnswer(answer: String): Boolean {
-        let lastAnswer = this.activeSoundEntities.name;
+        let lastAnswer = this.activeSoundEntities.entity.name;
         if(this.soundEntities.length !== 0){
             this.activeSoundEntities = this.soundEntities.pop();
         } else {

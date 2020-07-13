@@ -3,6 +3,10 @@ import { GameState } from '../shared/models/gamestate';
 import { SoundEntityPlayer } from '../shared/services/sound-entity-player/sound-entity-player.component';
 import { zergUnits, zergBuildings } from '../shared/zerg-models';
 import { Selection } from '../shared/models/Selection';
+import { terranUnits, terranBuildings } from '../shared/terran-models';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-inplay',
@@ -25,27 +29,37 @@ export class InplayComponent implements OnInit {
 
   correctSelections: Selection[] = []
   
-  constructor(private soundEntityPlayer: SoundEntityPlayer) { 
-    zergUnits.forEach((unit, index) => {
-      this.units[index] = new Selection(unit, "Inplay")
-    });
-    zergBuildings.forEach((building, index) => {
-      this.buildings[index] = new Selection(building, "Inplay")
-    });
+  constructor(private soundEntityPlayer: SoundEntityPlayer, private route: ActivatedRoute) { 
   }
 
   ngOnInit() {
+    this.startGame();
   }
-
 
   startGame(){
     this.isPlaying = true;
-    this.gameState = new GameState(true, true)
+    let race = this.route.snapshot.paramMap.get('id')
+    if (race == 'zerg') {
+      zergUnits.forEach((unit, index) => {
+        this.units[index] = new Selection(unit, "Inplay")
+      });
+      zergBuildings.forEach((building, index) => {
+        this.buildings[index] = new Selection(building, "Inplay")
+      });
+    } else if (race == 'terran') {
+      terranUnits.forEach((unit, index) => {
+        this.units[index] = new Selection(unit, "Inplay")
+      });
+      terranBuildings.forEach((building, index) => {
+        this.buildings[index] = new Selection(building, "Inplay")
+      });
+    }
+    this.gameState = new GameState(this.units.concat(this.buildings))
     this.playNoise()
   }
 
   playNoise() {
-    this.soundEntityPlayer.playSoundEntity(this.gameState.getActiveSoundEntity())
+    this.soundEntityPlayer.playSoundEntity(this.gameState.getActiveSoundEntity().entity)
   }
 
   answer(selection: Selection){
@@ -53,7 +67,7 @@ export class InplayComponent implements OnInit {
       return;
     }
 
-    let lastAnswer = this.gameState.getActiveSoundEntity().name;
+    let lastAnswer = this.gameState.getActiveSoundEntity().entity.name;
     if (this.gameState.submitAnswer(selection.entity.name)) {
       this.gameState.outputMessage = "Correct, that was the sound of a " + lastAnswer;
       this.lastAnswerCorrect = true;

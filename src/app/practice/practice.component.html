@@ -1,6 +1,12 @@
 <div *ngIf='outputMessage !== ""' class="alert alert-success"><h1><small> {{ outputMessage }}</small></h1>
 </div> 
+<h3>Zerg</h3>
 <h4>Units</h4>
-  <app-tile-component [selections]='units' (clickedTile)="playSound($event)"></app-tile-component>
+  <app-tile-component [selections]='zergUnits' (clickedTile)="playSound($event)"></app-tile-component>
 <h4>Buildings</h4>
-  <app-tile-component [selections]='buildings' (clickedTile)="playSound($event)"></app-tile-component>
+  <app-tile-component [selections]='zergBuildings' (clickedTile)="playSound($event)"></app-tile-component>
+  <h3>Terran</h3>
+<h4>Units</h4>
+  <app-tile-component [selections]='terranUnits' (clickedTile)="playSound($event)"></app-tile-component>
+<h4>Buildings</h4>
+  <app-tile-component [selections]='terranBuildings' (clickedTile)="playSound($event)"></app-tile-component>

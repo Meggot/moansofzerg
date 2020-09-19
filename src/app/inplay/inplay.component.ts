@@ -7,6 +7,7 @@ import { terranUnits, terranBuildings } from '../shared/terran-models';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators'
 import { Observable } from 'rxjs';
+import { protossUnits, protossBuildings } from '../shared/protoss-models';
 
 @Component({
   selector: 'app-inplay',
@@ -52,6 +53,40 @@ export class InplayComponent implements OnInit {
       });
       terranBuildings.forEach((building, index) => {
         this.buildings[index] = new Selection(building, "Inplay")
+      });
+    } else if (race == 'protoss') {
+      protossUnits.forEach((unit, index) => {
+        this.units[index] = new Selection(unit, "Inplay")
+      });
+      protossBuildings.forEach((building, index) => {
+        this.buildings[index] = new Selection(building, "Inplay")
+      });
+    } else if (race == 'random') {
+      var unitIndex = 0;
+      var buildingIndex = 0;
+      zergUnits.forEach((unit) => {
+        this.units[unitIndex] = new Selection(unit, "Inplay")
+        unitIndex++
+      });
+      zergBuildings.forEach((building, index) => {
+        this.buildings[buildingIndex] = new Selection(building, "Inplay")
+        buildingIndex++
+      });
+      terranUnits.forEach((unit, index) => {
+        this.units[unitIndex] = new Selection(unit, "Inplay")
+        unitIndex++
+      });
+      terranBuildings.forEach((building, index) => {
+        this.buildings[buildingIndex] = new Selection(building, "Inplay")
+        buildingIndex++
+      });
+      protossUnits.forEach((unit, index) => {
+        this.units[unitIndex] = new Selection(unit, "Inplay")
+      unitIndex++
+      });
+      protossBuildings.forEach((building, index) => {
+        this.buildings[buildingIndex] = new Selection(building, "Inplay")
+        buildingIndex++
       });
     }
     this.gameState = new GameState(this.units.concat(this.buildings))

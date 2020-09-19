@@ -5,9 +5,11 @@
     </div>
     <div class="panel-body">
       <div class="btn btn-success raceicon" [routerLink]="['moans', 'zerg']"><img class src="assets/zergicon.png"></div>
-      <div class="btn btn-success raceicon" routerLink="moans/terran"><img class src="assets/terranicon.png">
+      <div class="btn btn-success raceicon" [routerLink]="['moans', 'terran']"><img class src="assets/terranicon.png">
       </div>
-      <div class="btn btn-success raceicon" routerLink="moans/protoss"><img class src="assets/protossicon.png">
+      <div class="btn btn-success raceicon" [routerLink]="['moans', 'protoss']"><img class src="assets/protossicon.png">
+      </div>
+      <div class="btn btn-success raceicon" [routerLink]="['moans', 'random']"><img class src="assets/randomicon.png">
       </div>
     </div>
   </div>

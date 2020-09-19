@@ -1,40 +1,42 @@
 import {SoundEntity } from './models/SoundEntity';
 
-    export const terranUnits: SoundEntity[] = [
-        new SoundEntity("Banshee", "TerranSounds/Banshee.wav", "assets/TerranIcons/Banshee.png"),
-        new SoundEntity("Battlecruiser","TerranSounds/Battlecruiser.wav", "assets/TerranIcons/Battlecruiser.png"),
-        new SoundEntity("Cyclone","TerranSounds/Cyclone.wav", "assets/TerranIcons/Cyclone.png"),
-        new SoundEntity("Ghost", "TerranSounds/Ghost.wav", "assets/TerranIcons/Ghost.png"),
-        new SoundEntity("Hellion", "TerranSounds/Hellion.wav", "assets/TerranIcons/Hellion.png"),
-        new SoundEntity("Liberator", "TerranSounds/Liberator.wav", "assets/TerranIcons/Liberator.png"),
-        new SoundEntity("Marauder", "TerranSounds/Marauder.wav", "assets/TerranIcons/Marauder.png"),
-        new SoundEntity("Marine", "TerranSounds/Marine.wav", "assets/TerranIcons/Marine.png"),
-        new SoundEntity("Medivac", "TerranSounds/Medivac.wav", "assets/TerranIcons/Medivac.png"),
-        new SoundEntity("Mule", "TerranSounds/Mule.wav", "assets/TerranIcons/Mule.png"),
-        new SoundEntity("Raven", "TerranSounds/Raven.wav", "assets/TerranIcons/Raven.png"),
-        new SoundEntity("Reaper", "TerranSounds/Reaper.wav", "assets/TerranIcons/Reaper.png"),
-        new SoundEntity("SCV", "TerranSounds/SCV.wav", "assets/TerranIcons/SCV.png"),
-        new SoundEntity("Siege Tank", "TerranSounds/Siege Tank.wav", "assets/TerranIcons/Siege Tank.png"),
-        new SoundEntity("Thor", "TerranSounds/Thor.wav", "assets/TerranIcons/Thor.png"),
-        new SoundEntity("Viking", "TerranSounds/Viking.wav", "assets/TerranIcons/Viking.png"),
-        new SoundEntity("Widow Mine", "TerranSounds/Widow Mine.wav", "assets/TerranIcons/Widow Mine.png")
+    var soundsFileName = "ProtossSounds/"
+    var iconFileName = "assets/ProtossIcons/"
+
+    export const protossUnits: SoundEntity[] = [
+        new SoundEntity("Adept", soundsFileName + "Adept.wav", iconFileName + "Adept.png"),
+        new SoundEntity("Archon", soundsFileName + "Archon.wav", iconFileName + "Archon.png"),
+        new SoundEntity("Carrier", soundsFileName + "Carrier.wav",  iconFileName + "Carrier.png"),
+        new SoundEntity("Colossus", soundsFileName + "Colossus.wav",  iconFileName + "Colossus.png"),
+        new SoundEntity("Dark Tedmplar", soundsFileName + "Dark Templar.wav",  iconFileName + "Dark Templar.png"),
+        new SoundEntity("Disruptor", soundsFileName + "Disruptor.wav",  iconFileName + "Disruptor.png"),
+        new SoundEntity("High Templar", soundsFileName + "High Templar.wav",  iconFileName + "High Templar.png"),
+        new SoundEntity("Immortal", soundsFileName + "Immortal.wav",  iconFileName + "Immortal.png"),
+        new SoundEntity("Mothership", soundsFileName + "Mothership.wav",  iconFileName + "Mothership.png"),
+        new SoundEntity("Observer", soundsFileName + "Observer.wav",  iconFileName + "Observer.png"),
+        new SoundEntity("Oracle",soundsFileName + "Oracle.wav",  iconFileName + "Oracle.png"),
+        new SoundEntity("Pheonix", soundsFileName + "Pheonix.wav",  iconFileName + "Pheonix.png"),
+        new SoundEntity("Probe", soundsFileName + "Probe.wav",  iconFileName + "Probe.png"),
+        new SoundEntity("Sentry",soundsFileName + "Sentry.wav",  iconFileName + "Sentry.png"),
+        //new SoundEntity("Stalker",soundsFileName + "Stalker.wav",  iconFileName + "Stalker.png"),
+        new SoundEntity("Tempest", soundsFileName + "Tempest.wav",  iconFileName + "Tempest.png"),
+        new SoundEntity("Voidray", soundsFileName +  "Voidray.wav",  iconFileName + "Voidray.png"),
+        new SoundEntity("Zealot", soundsFileName + "Zealot.wav",  iconFileName + "Zealot.png")
     ]   
     
-    export const terranBuildings: SoundEntity[] = [
-        new SoundEntity("Armory", "TerranSounds/Armory.wav", "assets/TerranIcons/Armory.png"),
-        new SoundEntity("Barracks","TerranSounds/Barracks.wav", "assets/TerranIcons/Barracks.png"),
-        new SoundEntity("Bunker","TerranSounds/Bunker.wav", "assets/TerranIcons/Bunker.png" ),
-        new SoundEntity("Command Center","TerranSounds/Command Center.wav", "assets/TerranIcons/Command Center.png"),
-        new SoundEntity("Engineering Bay", "TerranSounds/Engineering Bay.wav", "assets/TerranIcons/Engineering Bay.png"),
-        new SoundEntity("Factory", "TerranSounds/Factory.wav", "assets/TerranIcons/Factory.png"),
-        new SoundEntity("Fusion Core", "TerranSounds/Fusion Core.wav", "assets/TerranIcons/Fusion Core.png"),
-        new SoundEntity("Ghost Academy", "TerranSounds/Ghost Academy.wav", "assets/TerranIcons/Ghost Academy.png"),
-        new SoundEntity("Missile Turret", "TerranSounds/Missile Turret.wav", "assets/TerranIcons/Missile Turret.png"),
-        new SoundEntity("Orbital Command", "TerranSounds/Orbital Command.wav", "assets/TerranIcons/Orbital Command.png"),
-        new SoundEntity("Planetary Fortress", "TerranSounds/Planetary Fortress.wav", "assets/TerranIcons/Planetary Fortress.png"),
-        new SoundEntity("Reactor", "TerranSounds/Reactor.wav", "assets/TerranIcons/Reactor.png"),
-        new SoundEntity("Sensor Tower", "TerranSounds/Sensor Tower.wav", "assets/TerranIcons/Sensor Tower.png"),
-        new SoundEntity("Starport", "TerranSounds/Starport.wav", "assets/TerranIcons/Starport.png"),
-        new SoundEntity("Supply Depot", "TerranSounds/Supply Depot.wav", "assets/TerranIcons/Supply Depot.png"),
-        new SoundEntity("Tech Lab", "TerranSounds/Tech Lab.wav", "assets/TerranIcons/Tech Lab.png")
+    export const protossBuildings: SoundEntity[] = [
+        new SoundEntity("Cybernetics Core", soundsFileName + "Cybernetics Core.wav",  iconFileName + "Cybernetics Core.png"),
+        new SoundEntity("Dark Shrine", soundsFileName + "Dark Shrine.wav",  iconFileName + "Dark Shrine.png"),
+        new SoundEntity("Fleet Beacon", soundsFileName + "Fleet Beacon.wav",  iconFileName + "Fleet Beacon.png" ),
+        new SoundEntity("Forge", soundsFileName + "Forge.wav",  iconFileName + "Forge.png"),
+        new SoundEntity("Gateway", soundsFileName + "Gateway.wav",  iconFileName + "Gateway.png"),
+        new SoundEntity("Nexus", soundsFileName + "Nexus.wav",  iconFileName + "Nexus.png"),
+        new SoundEntity("Photon Cannon", soundsFileName + "Photon Cannon.wav",  iconFileName + "Photon Cannon.png"),
+        new SoundEntity("Pylon", soundsFileName + "Pylon.wav",  iconFileName + "Pylon.png"),
+        new SoundEntity("Robotics Bay", soundsFileName + "Robotics Bay.wav",  iconFileName + "Robotics Bay.png"),
+        new SoundEntity("Robotics Facility", soundsFileName + "Robotics Facility.wav",  iconFileName + "Robotics Facility.png"),
+        new SoundEntity("Shield Battery", soundsFileName + "Shield Battery.wav",  iconFileName + "Shield Battery.png"),
+        new SoundEntity("Stargate", soundsFileName + "Stargate.wav",  iconFileName + "Stargate.png"),
+        new SoundEntity("Templar Archives", soundsFileName + "Templar Archives.wav",  iconFileName + "Templar Archives.png"),
+        new SoundEntity("Twilight Council", soundsFileName + "Twilight Council.wav",  iconFileName + "Twilight Council.png")
     ]

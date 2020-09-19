@@ -3,6 +3,7 @@ import { SoundEntityPlayer } from '../shared/services/sound-entity-player/sound-
 import { ZergUnits, zergUnits, zergBuildings } from '../shared/zerg-models';
 import { Selection } from '../shared/models/Selection';
 import { terranUnits, terranBuildings } from '../shared/terran-models';
+import { protossUnits, protossBuildings } from '../shared/protoss-models';
 
 @Component({
   selector: 'app-practice',
@@ -16,6 +17,8 @@ export class PracticeComponent implements OnInit {
   zergBuildings: Selection[] = []
   terranUnits: Selection[] = []
   terranBuildings: Selection[] = []
+  protossUnits: Selection[] = []
+  protossBuildings: Selection[] = []
   playingSelection: Selection;
 
   constructor(private soundEntityPlayer: SoundEntityPlayer) {
@@ -30,6 +33,12 @@ export class PracticeComponent implements OnInit {
     });
     terranBuildings.forEach((building, index) => {
       this.terranBuildings[index] = new Selection(building, "Practice")
+    });
+    protossUnits.forEach((unit, index) => {
+      this.protossUnits[index] = new Selection(unit, "Practice")
+    });
+    protossBuildings.forEach((building, index) => {
+      this.protossBuildings[index] = new Selection(building, "Practice")
     });
   }
 

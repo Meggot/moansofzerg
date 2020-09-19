@@ -27,7 +27,7 @@ import {SoundEntity } from './models/SoundEntity';
         new SoundEntity("Command Center","TerranSounds/Command Center.wav", "assets/TerranIcons/Command Center.png"),
         new SoundEntity("Engineering Bay", "TerranSounds/Engineering Bay.wav", "assets/TerranIcons/Engineering Bay.png"),
         new SoundEntity("Factory", "TerranSounds/Factory.wav", "assets/TerranIcons/Factory.png"),
-        new SoundEntity("Fusion Core", "TerranSounds/Fusion Core.wav", "assets/TerranIcons/Fusion Core.png"),
+        //new SoundEntity("Fusion Core", "TerranSounds/Fusion Core.wav", "assets/TerranIcons/Fusion Core.png"),
         new SoundEntity("Ghost Academy", "TerranSounds/Ghost Academy.wav", "assets/TerranIcons/Ghost Academy.png"),
         new SoundEntity("Missile Turret", "TerranSounds/Missile Turret.wav", "assets/TerranIcons/Missile Turret.png"),
         new SoundEntity("Orbital Command", "TerranSounds/Orbital Command.wav", "assets/TerranIcons/Orbital Command.png"),

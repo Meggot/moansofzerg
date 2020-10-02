@@ -1,6 +1,0 @@
-<table>
-    <tr>
-      <img *ngFor="let unit of selections; let i = index" src='{{ unit.entity.iconFilePath }}' class="img-responsive"
-        (click)='tileClicked(unit)' [class]='unit.state'>
-    </tr>
-  </table>

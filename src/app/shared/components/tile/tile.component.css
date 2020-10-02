@@ -1,8 +1,12 @@
+.btn-tiled {
+    padding: 0; 
+    border: 10
+}
+
 .img-wrong {
     -webkit-filter: sepia() brightness(50%) saturate(3000%);
 }
 
-/* T */
 .img-correct {
     -webkit-filter: sepia(100%) hue-rotate(90deg) saturate(2000%);
 }

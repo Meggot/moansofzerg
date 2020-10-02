@@ -18,7 +18,7 @@ import {SoundEntity } from './models/SoundEntity';
         new SoundEntity("Pheonix", soundsFileName + "Pheonix.wav",  iconFileName + "Pheonix.png"),
         new SoundEntity("Probe", soundsFileName + "Probe.wav",  iconFileName + "Probe.png"),
         new SoundEntity("Sentry",soundsFileName + "Sentry.wav",  iconFileName + "Sentry.png"),
-        //new SoundEntity("Stalker",soundsFileName + "Stalker.wav",  iconFileName + "Stalker.png"),
+        new SoundEntity("Stalker",soundsFileName + "Stalker.wav",  iconFileName + "Stalker.png"),
         new SoundEntity("Tempest", soundsFileName + "Tempest.wav",  iconFileName + "Tempest.png"),
         new SoundEntity("Voidray", soundsFileName +  "Voidray.wav",  iconFileName + "Voidray.png"),
         new SoundEntity("Zealot", soundsFileName + "Zealot.wav",  iconFileName + "Zealot.png")

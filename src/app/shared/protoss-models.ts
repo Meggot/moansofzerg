@@ -8,7 +8,7 @@ import {SoundEntity } from './models/SoundEntity';
         new SoundEntity("Archon", soundsFileName + "Archon.wav", iconFileName + "Archon.png"),
         new SoundEntity("Carrier", soundsFileName + "Carrier.wav",  iconFileName + "Carrier.png"),
         new SoundEntity("Colossus", soundsFileName + "Colossus.wav",  iconFileName + "Colossus.png"),
-        new SoundEntity("Dark Tedmplar", soundsFileName + "Dark Templar.wav",  iconFileName + "Dark Templar.png"),
+        new SoundEntity("Dark Templar", soundsFileName + "Dark Templar.wav",  iconFileName + "Dark Templar.png"),
         new SoundEntity("Disruptor", soundsFileName + "Disruptor.wav",  iconFileName + "Disruptor.png"),
         new SoundEntity("High Templar", soundsFileName + "High Templar.wav",  iconFileName + "High Templar.png"),
         new SoundEntity("Immortal", soundsFileName + "Immortal.wav",  iconFileName + "Immortal.png"),

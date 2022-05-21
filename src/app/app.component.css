@@ -4,6 +4,7 @@ ul {
 
 .jumbotron {
     background: #404146;
+    border-radius: 0;
 }
 
 .btn-margin-left {
@@ -13,12 +14,16 @@ ul {
     margin-right: 2px;
 }
 
-.navbar-header{
+.navbar {
+    background-color: rgb(189, 189, 189);
+}
+
+.navbar-header {
     margin-left: 2px;
     margin-right: 2px;
     color: black;
 }
 
-.navbar-text{
-    color: black;
+.navbar-text {
+    color: rgba(17, 78, 17, 0.712);
 }

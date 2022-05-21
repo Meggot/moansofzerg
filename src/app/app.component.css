@@ -2,6 +2,10 @@ ul {
     list-style-type: none;
 }
 
+.jumbotron {
+    background: #404146;
+}
+
 .btn-margin-left {
     margin-left: 2px;
 }
@@ -12,4 +16,9 @@ ul {
 .navbar-header{
     margin-left: 2px;
     margin-right: 2px;
+    color: black;
+}
+
+.navbar-text{
+    color: black;
 }

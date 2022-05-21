@@ -4,23 +4,33 @@
   </div>
 
   <div class="col-md-8">
-    <div class="alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" *ngIf='!finished'>
-      <h4>{{ gameState.score }} / {{ gameState.length}} Correct. {{ gameState.wrongAnswers }} Wrong </h4>
-      <div class="col-md-10">
+    <div class="alert scoreboard_div" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" *ngIf='!finished'>
+      <div style="float: left;">
+        <h4>{{ gameState.score }} / {{ gameState.length}} Correct.</h4>
+      </div>
+      <div style="float: right;">
+
+        <h4>{{ gameState.wrongAnswers }} Wrong </h4>
+      </div>
+      <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
+        Replay Sound
+      </div>
+
+      <div>
+        <br>
         <div class="panel panel-success">
-          <strong>{{gameState.outputMessage}}</strong>
+          <h4><strong>{{gameState.outputMessage}}</strong></h4>
         </div>
       </div>
     </div>
-    <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
-      Replay Sound
-    </div>
   </div>
-  <div class="ml-5 ml-lg-0"></div>
+  <div class="ml-5 ml-lg-0">
+  </div>
   <div class="col-md-8">
-    <div class="col-md-12 alert" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
+    <div class="col-md-12 alert selections_div" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
       <h4>Units</h4>
       <app-tile-component [selections]='units' (clickedTile)="answer($event)"></app-tile-component>
+      <br>
       <h4>Buildings</h4>
       <app-tile-component [selections]='buildings' (clickedTile)="answer($event)"></app-tile-component>
     </div>

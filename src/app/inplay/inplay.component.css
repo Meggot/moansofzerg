@@ -1,0 +1,19 @@
+.scoreboard_div {
+    background: #606269;
+    color: white;
+    border-style: hidden;
+}
+
+.alert-success{
+    background: #6cac64;
+}
+
+.alert-danger{
+    background: #ac6464;
+}
+
+.selections_div {
+    background: #606269;
+    color: white;
+    border-style: hidden;
+}

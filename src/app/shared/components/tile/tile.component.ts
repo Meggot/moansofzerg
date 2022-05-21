@@ -11,7 +11,7 @@ export class TileComponent implements OnInit {
   @Output() clickedTile = new EventEmitter<Selection>();
 
   @Input()
-  private selections: Selection[]
+  public selections: Selection[]
 
   constructor() { 
   }

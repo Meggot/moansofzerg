@@ -5,7 +5,7 @@
     <div class="panel-body">
         <div class="alert alert-success">
             <h4>{{ gameState.score }} / {{ gameState.length}} Correct</h4>
-            <div *ngIf='gameState.wrongAnswers >0'>
+            <div *ngIf='gameState.wrongAnswers >0' class="alert-danger">
               <h4>{{ gameState.wrongAnswers }} Wrong </h4>
             </div>
           </div>

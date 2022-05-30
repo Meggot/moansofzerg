@@ -26,7 +26,6 @@ export class GameState {
     }
 
     getActiveSoundEntity(){
-        console.log(this.activeSoundEntities)
         return this.activeSoundEntities;
     }
 

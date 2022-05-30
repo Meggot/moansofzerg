@@ -1,9 +1,9 @@
-<div class="col-md-12 float-center">
+<div>
   <div class="row" *ngIf='finished'>
     <app-scorescreen [gameState]='gameState'></app-scorescreen>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-12 float-center">
     <div class="alert scoreboard_div" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'" *ngIf='!finished'>
       <div style="float: left;">
         <h4>{{ gameState.score }} / {{ gameState.length}} Correct.</h4>
@@ -11,28 +11,47 @@
       <div style="float: right;">
         <h4>{{ gameState.wrongAnswers }} Wrong </h4>
       </div>
-      <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
-        Replay Sound
-      </div>
+      <br>
+      <div class="input-group">
+        <div class="col-md-11">
+          <div class="float-left col-md-8">
+            <div class="btn btn-warning col-md-12" (click)="playNoise()" *ngIf='!finished'>
+              Replay Sound
+            </div>
+          </div>
+          <div class="float-right btn-group">
+            <div class="btn">
+            <strong>Volume: {{soundEntityPlayer.activeVolume}}</strong>
+            </div>
+            <div class="btn btn-success" (click)="volumeSet(soundEntityPlayer.activeVolume+1)">
+              +
+            </div>
+            <br>
+            <div class="btn btn-danger" (click)="volumeSet(soundEntityPlayer.activeVolume-1)">
+              -
+            </div>
+          </div>
 
-      <div>
-        <br>
-        <div class="panel panel-success">
-          <h4><strong>{{gameState.outputMessage}}</strong></h4>
+        </div>
+
+        <div>
+          <br>
+          <div class="panel panel-success">
+            <h4><strong>{{gameState.outputMessage}}</strong></h4>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="ml-5 ml-lg-0">
-  </div>
-  <div class="col-md-8">
-    <div class="col-md-12 alert selections_div" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
-      <h4>Units</h4>
-      <app-tile-component [selections]='units' (clickedTile)="answer($event)"></app-tile-component>
-      <br>
-      <h4>Buildings</h4>
-      <app-tile-component [selections]='buildings' (clickedTile)="answer($event)"></app-tile-component>
+    <div class="ml-5 ml-lg-0">
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-12 alert selections_div" [ngClass]="(lastAnswerCorrect)?'alert-success':'alert-danger'">
+        <h4>Units</h4>
+        <app-tile-component [selections]='units' (clickedTile)="answer($event)"></app-tile-component>
+        <br>
+        <h4>Buildings</h4>
+        <app-tile-component [selections]='buildings' (clickedTile)="answer($event)"></app-tile-component>
+      </div>
     </div>
   </div>
-</div>
-<div class="col-md-2"></div>
+  <div class="col-md-2"></div>

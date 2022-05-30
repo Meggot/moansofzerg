@@ -30,7 +30,7 @@ export class InplayComponent implements OnInit {
 
   correctSelections: Selection[] = []
   
-  constructor(private soundEntityPlayer: SoundEntityPlayer, private route: ActivatedRoute) { 
+  constructor(public soundEntityPlayer: SoundEntityPlayer, private route: ActivatedRoute) { 
   }
 
   ngOnInit() {
@@ -93,6 +93,16 @@ export class InplayComponent implements OnInit {
     this.playNoise()
   }
 
+  volumeSet(volume: number) {
+    if (volume <= 0) {
+      volume = 1;
+    } else if (volume > 10) {
+      volume = 10
+    } else {
+      this.soundEntityPlayer.setVolume(volume)
+    }
+  }
+
   playNoise() {
     this.soundEntityPlayer.playSoundEntity(this.gameState.getActiveSoundEntity().entity)
   }
@@ -113,7 +123,6 @@ export class InplayComponent implements OnInit {
     }
 
     if (this.gameState.isFinished()) {
-      console.log("Game Over")
       this.finished = true;
       this.gameOver()
     }

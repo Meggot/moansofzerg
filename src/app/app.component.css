@@ -5,6 +5,7 @@ ul {
 .jumbotron {
     background: #404146;
     border-radius: 0;
+    min-width: 90%;
 }
 
 .btn-margin-left {
